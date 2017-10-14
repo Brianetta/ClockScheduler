@@ -1,0 +1,7 @@
+name: ${project.name}
+main: org.ppcis.ClockScheduler.ClockScheduler
+author: Brianetta
+website: https://github.com/Brianetta/ClockScheduler
+version: ${project.version}
+commands:
+permissions:
