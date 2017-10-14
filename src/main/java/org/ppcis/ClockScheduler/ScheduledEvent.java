@@ -26,37 +26,47 @@ public class ScheduledEvent extends Event {
     private static final HandlerList handlers = new HandlerList();
     // These three members all hold the same thing: the time this event was scheduled
     private long scheduledTimeMilliseconds;
-    private Date scheduledDate;
     private Calendar scheduledCalendar;
-    // Handy constant
-    private static int MILLISECONDS_PER_TICK = 50;
 
     public ScheduledEvent(long scheduledTime) {
         // The time we were meant to be run
         this.scheduledTimeMilliseconds = scheduledTime;
-        scheduledDate = new Date();
+        Date scheduledDate = new Date();
         scheduledDate.setTime(scheduledTime);
         scheduledCalendar = Calendar.getInstance();
         scheduledCalendar.setTime(scheduledDate);
     }
 
+    /**
+     * @return The time that has elapsed since this Event was scheduled in 20ths of a second
+     */
     public long delayInTicks() {
         // The number of ticks since we were meant to run
         // Not expecting to use this, but it might be handy
+        int MILLISECONDS_PER_TICK = 50;
         return (scheduledTimeMilliseconds - System.currentTimeMillis()) / MILLISECONDS_PER_TICK;
     }
 
+    /**
+     * @return The time that has elapsed since this Event was scheduled in milliseconds
+     */
     public long delayInSeconds() {
         // The number of seconds since we were meant to run
         // Not expecting to use this, but it might be handy
         return (scheduledTimeMilliseconds - System.currentTimeMillis()) / 1000;
     }
 
+    /**
+     * @return The hour component of the time at which this Event was scheduled
+     */
     public int hours() {
         // The time of the current hour
         return scheduledCalendar.get(Calendar.HOUR_OF_DAY);
     }
 
+    /**
+     * @return The minute component of the time at which this Event was scheduled
+     */
     public int minutes() {
         return scheduledCalendar.get(Calendar.MINUTE);
     }
