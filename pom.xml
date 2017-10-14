@@ -6,7 +6,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <groupId>ClockScheduler</groupId>
+    <groupId>org.ppcis</groupId>
     <artifactId>ClockScheduler</artifactId>
     <version>0.1</version>
     <repositories>
