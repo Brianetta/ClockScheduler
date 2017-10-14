@@ -33,7 +33,7 @@ public class ClockScheduler extends JavaPlugin {
         // Instantiate the event scheduler
         eventSchedulerTask = new EventSchedulerTask();
         // Schedule our event scheduler to run each minute from the start of the next minute
-        new Timer().schedule(eventSchedulerTask, System.currentTimeMillis()%MINUTE_MILLISECONDS, MINUTE_MILLISECONDS);
+        new Timer().schedule(eventSchedulerTask, (MINUTE_MILLISECONDS - System.currentTimeMillis()%MINUTE_MILLISECONDS), MINUTE_MILLISECONDS);
     }
 
     @Override
