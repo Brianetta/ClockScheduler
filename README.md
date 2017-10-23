@@ -66,7 +66,7 @@ including the following in the dependencies section of your project's `pom.xml`:
         <dependency>
             <groupId>org.ppcis</groupId>
             <artifactId>ClockScheduler</artifactId>
-            <version>0.1</version>
+            <version>1.0.0</version>
             <scope>provided</scope>
         </dependency>
 ``` 
